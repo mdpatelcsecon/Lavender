@@ -1,0 +1,4 @@
+/limine
+/ovmf
+*.iso
+*.hdd
