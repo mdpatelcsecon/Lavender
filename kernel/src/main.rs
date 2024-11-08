@@ -8,12 +8,16 @@
 /// by Limine or any other Limine Boot Protocol compliant bootloader.
 
 mod hal;
+mod log;
 
 use core::panic::PanicInfo;
 
+use hal::isa::instructions::{interface::InstructionInterface, InstructionWrapper};
+
 #[no_mangle]
 unsafe extern "C" fn main() -> ! {
-    loop {}
+    logln!("Hello, World!");
+    InstructionWrapper::halt()
 }
 
 #[panic_handler]
