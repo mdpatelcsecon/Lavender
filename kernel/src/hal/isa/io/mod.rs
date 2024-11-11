@@ -1,5 +1,5 @@
-pub mod interface;
 pub mod aarch64;
+pub mod interface;
 pub mod x86_64;
 
 #[cfg(target_arch = "aarch64")]
