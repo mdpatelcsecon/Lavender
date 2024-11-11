@@ -4,6 +4,7 @@ use spin::{Mutex, Lazy};
 
 use crate::hal::isa::io::{self, interface::IReg8Ifce, interface::OReg8Ifce, IoReg8};
 
+#[cfg(target_arch = "x86_64")]
 pub static LOG_PORT: Lazy<Mutex<SerialPort>> = Lazy::new(
     || {
         Mutex::new(

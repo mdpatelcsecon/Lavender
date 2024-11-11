@@ -17,10 +17,10 @@ mod log;
 use core::panic::PanicInfo;
 
 use hal::isa::init::{IsaInitializer, interface::InitInterface};
-use hal::isa::instructions::{interface::InstructionInterface, InstructionWrapper};
+use hal::isa::lp_control::{interface::LpCtlIfce, LpCtl};
 
 /// This is the entry point for the kernel. The `main` function is called by the bootloader after
-/// setting up the environment. The function is made C ABI compatible so that it can be called by
+/// setting up the environment. It is made C ABI compatible so that it can be called
 /// by Limine or any other Limine Boot Protocol compliant bootloader.
 #[no_mangle]
 unsafe extern "C" fn main() -> ! {
@@ -32,7 +32,7 @@ unsafe extern "C" fn main() -> ! {
             logln!("ISA specific initialization failed: {:?}", e)
         }
     }
-    InstructionWrapper::halt()
+    LpCtl::halt()
 }
 
 #[panic_handler]

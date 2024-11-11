@@ -5,6 +5,6 @@ pub mod x86_64;
 pub mod aarch64;
 
 #[cfg(target_arch = "x86_64")]
-pub type InstructionWrapper = x86_64::InstructionInterface;
+pub use x86_64::LpCtl;
 #[cfg(target_arch = "aarch64")]
-pub type InstructionWrapper = aarch64::InstructionInterface;
+pub use aarch64::LpCtl;

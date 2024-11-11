@@ -1,9 +1,9 @@
 use super::interface;
 
-struct IsaInitializer;
+pub struct IsaInitializer;
 
 #[derive(Debug)]
-enum Error {
+pub enum Error {
     // Error type for the aarch64 architecture
 }
 

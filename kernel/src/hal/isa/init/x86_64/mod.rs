@@ -28,7 +28,7 @@ static BSP_GDT: Lazy<Mutex<Gdt>> = Lazy::new(|| Mutex::new(Gdt::new(&BSP_TSS.loc
 pub struct IsaInitializer;
 
 #[derive(Debug)]
-enum Error {
+pub enum Error {
     InvalidGdt,
     InvalidTss,
 }
