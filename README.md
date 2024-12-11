@@ -1,5 +1,5 @@
-# Lavender
-## An Experimental Modern Operating System Project
+# Nova
+## Part of CharlotteOS, An Experimental Modern Operating System Project
 
 ### Implementation Languages
 - Rust
